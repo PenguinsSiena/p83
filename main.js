@@ -40,7 +40,7 @@ if (mouseEvent == "mouseDown") {
     ctx.beginPath();
     ctx.strokeStyle = color;
     ctx.lineWidth = width_of_line;
-
+}
 function my_touchmove(e)
 {
     current_position_of_touch_x = e.touches[0].clientX - canvas.offsetLeft;
@@ -48,7 +48,7 @@ function my_touchmove(e)
 
     ctx.beginPath();
     ctx.strokeStyle = color;
-    ctx.lineWith - width_of_line;
+    ctx.lineWidth = width_of_line;
     ctx.moveTo (last_position_of_touch_x, last_position_of_touch_y);
     ctx.lineTo(current_position_of_touch_x, current_position_of_touch_y);
     ctx.stroke();
@@ -60,8 +60,8 @@ function my_touchmove(e)
 canvas.addEventListener("mousemove", my_mousemove);
 function my_mousemove(e);
 {
-    current_position_of_mouse_x = e.client - canvas.offsetLeft;
-    current_position_of_mouse_y = e.client - canvas.offsetTop;
+    current_position_of_mouse_x = e.clientX - canvas.offsetLeft;
+    current_position_of_mouse_y = e.clientY - canvas.offsetTop;
 
     if (mouseEvent =="mouseDown") {
         ctx.beginPath();
