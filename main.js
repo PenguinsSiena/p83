@@ -41,6 +41,8 @@ if (mouseEvent == "mouseDown") {
     ctx.strokeStyle = color;
     ctx.lineWidth = width_of_line;
 }
+canvas.addEventListener("touchstart", my_touchstart);
+canvas.addEventListener("touchmove", my_touchmove);
 function my_touchmove(e)
 {
     current_position_of_touch_x = e.touches[0].clientX - canvas.offsetLeft;
@@ -57,6 +59,10 @@ function my_touchmove(e)
     last_position_of_touch_y = current_position_of_touch_y;
 }
 
+function my_touchstart(e){
+    last_position_of_touch_x = current_position_of_touch_x;
+    last_position_of_touch_y = current_position_of_touch_y;
+}
 canvas.addEventListener("mousemove", my_mousemove);
 function my_mousemove(e);
 {
